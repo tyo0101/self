@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+div.cool{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height:100vh;
+          }
+          ul.slides{
+            position: relative;
+            width: inherit;
+            height:280px;
+            list-style:none;
+            margin: 0px;
+            padding:0px;
+            background-color: cornflowerblue;
+            overflow: hidden;
+          }
+          li.slide{
+            margin: 0px;
+            padding:0px;
+            width:inherit;
+            height: inherit;
+            position: absolute;
+            top:0px;
+            left:0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family:Helvetica;
+            font-size:120px;
+            color: aliceblue;
+            transition: .5s transform ease-in-out;
+          }
+          li.slide img{
+  max-width: 900px;
+  max-height: 900px;
+}
+          .slide:nth-of-type(1){
+            background-color: rgb(71, 87, 152);
+          }
+          .slide:nth-of-type(2){
+            background-color: rgb(71, 152, 86);
+            left:100%;
+          }
+          .slide:nth-of-type(3){
+            background-color: rgb(147, 71, 152);
+            left:200%;
+          }
+          input[type="radio"]{
+position: relative;
+z-index:100;
+display:none;
+          }
+          .control-visable{
+           position: absolute;
+           width:100%;
+           bottom:12px;
+           text-align: center;
+          }
+          .control-visable label{
+           display:inline-block;
+           width:10px;
+           height:10px;
+           background-color: rgb(255, 255, 255);
+           margin: 0 3px;
+           border-radius:50%;
+           border:2px solid#FFF;
+          }
+          input[type="radio"]:nth-of-type(1):checked~
+          .control-visable label:nth-of-type(1){
+            background-color: rgb(78, 78, 78);
+          }
+          input[type="radio"]:nth-of-type(2):checked~
+          .control-visable label:nth-of-type(2){
+            background-color: rgb(78, 78, 78);
+          }
+          input[type="radio"]:nth-of-type(3):checked~
+          .control-visable label:nth-of-type(3){
+            background-color: rgb(78, 78, 78);
+          }
+          input[type="radio"]:nth-of-type(1):checked~.slide{
+            transform: translateX(0%);
+          }
+          input[type="radio"]:nth-of-type(2):checked~.slide{
+            transform: translateX(-100%);
+          }
+          input[type="radio"]:nth-of-type(3):checked~.slide{
+            transform: translateX(-200%);
+          }
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  border: 1px solid #000;
+  z-index: 9999;
+}
+.prev, .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: auto;
+              margin-top: -22px;
+              padding: 16px;
+              color: white;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover, .next:hover {
+              background-color: rgba(0,0,0,0.8);
+            }
+        </style>
+    </head>
+    <meta charset="utf-8">
+    <title>TYO</title>
+<body>
+    <button onclick="showPopup()">see more</button>
+    <div id="popup">
+      <div class="cool">
+        <ul class="slides">
+            <input type="radio" id="control-1" name="control"checked>
+            <input type="radio" id="control-2" name="control">
+            <input type="radio" id="control-3" name="control">
+    
+            <li class="slide"><img src="D:\MyWebbb\MEEE\note\n1.jpg"></li>
+            <li class="slide"><img src="D:\MyWebbb\MEEE\note\n2.jpg"></li>
+            <li class="slide"><img src="D:\MyWebbb\MEEE\note\n3.jpg"></li>
+    
+            <div class="control-visable">
+                <label for="control-1"></label>
+                <label for="control-2"></label>
+                <label for="control-3"></label>
+            </div>
+        </ul>
+        
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <button onclick="hidePopup()">X</button>
+     
+    </div>
+<script>
+function showPopup() {
+  var popup = document.getElementById("popup");
+  popup.style.display = "block";
+}
+function hidePopup() {
+  var popup = document.getElementById("popup");
+  popup.style.display = "none";
+}
+var currentSlide = 0;
+      var intervalId = setInterval(nextSlide, 5000);
+  function nextSlide() {
+          currentSlide++;
+          if (currentSlide >= 3) {
+              currentSlide = 0;
+          }
+          document.getElementById('control-' + (currentSlide + 1)).click();
+      }
+      var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("cool");
+          if (n > slides.length) {
+            slideIndex = 1;
+          }
+          if (n < 1) {
+            slideIndex = slides.length;
+          }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+
+          slides[slideIndex - 1].style.display = "block";
+        }
+        
+</script>
+</body>
+
+</html>
