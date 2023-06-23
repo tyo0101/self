@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          html, body {
+            height: 100%; /*外層高度100%*/
+            margin: 0;
+}
+.container {
+      align-items: center;
+      justify-content: center;
+margin-top:50px;
+      /* background-color: aqua; */
+}
+main{
+  height:100%;
+  flex: 1;
+  flex-direction: column; /* Add this line to make it a column layout */
+  /* background-color: #ff9d2d; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 80px;
+ background-color: #f5f5f5; 
+ flex-shrink: 0; 
+}
+ .nav1 ul{
+  position: fixed;
+  top:0px;
+  background-color: #ffffff;
+    z-index:1;
+    list-style: none;   /* 移除項目符號 */
+    margin:0px auto;
+    padding: 0px ;
+    display: flex;
+    justify-self:center;
+    height: 49px;
+    width:100%;
+    /* background-color: #ff9d2d; */
+}
+.nav1 a{
+    color:#323232; 
+    display:block;
+    padding: 10px;
+    font-family:monospace;
+    font-size: 25px;
+    text-decoration: none; 
+    width: 170px;
+} 
+.nav1 a:hover{ 
+    /* background-color: rgb(32, 56, 100); */
+    color: #ff9d2d;
+    }
+    li {
+  display: inline-block; /* 使選單項目水平排列 */
+}
+
+            .fade {
+              animation-name: fade;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+            }
+            div.cool{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height:100vh; */
+          }
+          ul.slides{
+            position: relative;
+            width: 110%;
+            height:700px;
+            list-style:none;
+            margin: auto;
+            padding:auto;
+            background-color: cornflowerblue;
+            overflow: hidden;
+          }
+          li.slide{
+            margin: 0px;
+            padding:0px;
+            width:100%;
+            height: 100%;
+            position: absolute;
+            top:0px;
+            left:0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family:Helvetica;
+            font-size:120px;
+            color: aliceblue;
+            transition: .5s transform ease-in-out;
+          }
+          li.slide img{
+            height:100%;
+            width:100%;
+object-fit: cover;
+}
+          .slide:nth-of-type(1){
+            background-color: rgb(71, 87, 152);
+          }
+          .slide:nth-of-type(2){
+            background-color: rgb(71, 152, 86);
+            left:100%;
+          }
+          .slide:nth-of-type(3){
+            background-color: rgb(147, 71, 152);
+            left:200%;
+          }
+          input[type="radio"]{
+position: relative;
+z-index:100;
+display:none;
+          }
+          .control-visable{
+           position: absolute;
+           width:100%;
+           bottom:12px;
+           text-align: center;
+          }
+          .control-visable label{
+           display:inline-block;
+           width:10px;
+           height:10px;
+           background-color: rgb(255, 255, 255);
+           margin: 0 3px;
+           border-radius:50%;
+           border:2px solid#FFF;
+          }
+          input[type="radio"]:nth-of-type(1):checked~
+          .control-visable label:nth-of-type(1){
+            background-color: rgb(78, 78, 78);
+          }
+          input[type="radio"]:nth-of-type(2):checked~
+          .control-visable label:nth-of-type(2){
+            background-color: rgb(78, 78, 78);
+          }
+          input[type="radio"]:nth-of-type(3):checked~
+          .control-visable label:nth-of-type(3){
+            background-color: rgb(78, 78, 78);
+          }
+          input[type="radio"]:nth-of-type(1):checked~.slide{
+            transform: translateX(0%);
+          }
+          input[type="radio"]:nth-of-type(2):checked~.slide{
+            transform: translateX(-100%);
+          }
+          input[type="radio"]:nth-of-type(3):checked~.slide{
+            transform: translateX(-200%);
+          }
+          h1{
+            color:#323232;
+            font-family:Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .image-container {
+          align-items: center;
+          justify-content: center;
+    display: flex;
+    flex-direction: row;
+    /* background-color: #49ff2d; */
+  }
+  .image-container2{
+    align-items: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: row; 
+    /* background-color: aquamarine; */
+  }
+
+  .button {
+    transition: filter 0.3s ease;
+  }
+
+  /* 當滑鼠碰觸到連結時的圖片按鈕樣式 */
+  a:hover .button {
+    background:white;
+    opacity: 80%;
+  }
+
+        </style>
+    </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>TYO</title>
+<body>
+
+    <nav class="nav1">
+        <ul>  
+          <img src="img/TYO.png"style="height:49px;margin:auto 60% auto 0%;">  
+            <li><a href="homepage.html">About me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact me</a></li>
+        </ul>
+    </nav>
+    
+<div class="container">
+    <div class="cool">
+      <ul class="slides">
+          <input type="radio" id="control-1" name="control"checked>
+          <input type="radio" id="control-2" name="control">
+          <input type="radio" id="control-3" name="control">
+  
+          <li class="slide"><img src="img/販賣機.png"></li>
+          <li class="slide"><img src="img/pink.png"></li>
+          <li class="slide"><img src="note/n3.jpg"></li>
+  
+          <div class="control-visable">
+              <label for="control-1"></label>
+              <label for="control-2"></label>
+              <label for="control-3"></label>
+          </div>
+      </ul>
+   </div>
+
+  <main>
+    
+   
+    <div class="content">
+      <div style="height:400px;background-color: #ff9d2d;"></div>
+      <h1>Portfolio</h1>
+      <div class="image-container"style="height:800px;width:1300px; overflow: hidden;">
+        <div style="width:50%;height:800px;margin:auto;">
+         <a href="閨房.html">
+          <div style="width:100%;height:43%;">
+            <img src="img/閨房/少女的閨房.png"class="button"style="object-fit:cover;height:100%;width:100%;">
+          </div>
+         </a>
+          <a href="homepage.html">
+           <div style="width:100%;height:57%;">
+            <img src="3D model/green cap.png"class="button"style="object-fit:contain;height:100%;width:100%;position: relative;">
+           </div>
+         </a>
+        </div>
+    
+        
+         <a href="瑪利歐.html">
+          <div style="width:100%;height:800px;">
+            <img src="gif/瑪利歐.gif"class="button"style="object-fit: contain;height:100%;width:100%;">
+          </div>
+         </a>
+        </div>
+
+  <div class="image-container2"style="height:700px;width:1400px; overflow: hidden;">
+      
+          <div style="width:40%;height:700px;margin:auto;">
+            <a href="homepage.html">
+            <div style="width:90%;height:100%;">
+              <img src="gif/販賣機.gif"class="button"style="object-fit:cover;height:100%;width:100%; object-position: -320px 0;">
+            </div>
+            </a>
+          </div>
+
+          <div style="width:50%;height:700px;align-items: center;justify-content: center;display: flex;flex-direction: column;">
+          <a href="飛機.html">
+            <div style="width:100%;height:350px;overflow: hidden;">
+              <img src="gif/飛機.gif"class="button"style="object-fit:contain;height:100%;width:100%;">
+            </div>
+          </a>
+
+        <div style="align-items: center;justify-content: center;display: flex;">
+          <a href="homepage.html">
+            <div style="width:100%;height:350px;">
+              <img src="阿虎/阿虎.png"class="button"style="object-fit:cover;height:130%;width:100%;">
+            </div>
+          </a>
+          <a href="note.html">
+            <div style="width:100%;height:350px;">
+              <img src="img/tayler.png"class="button"style="object-fit:cover;height:100%;width:100%;">
+            </div>
+          </a>
+          </div>
+        </div>
+
+      </div>
+  </div>
+ </main>
+
+   <footer>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <button style="color: #4d4d4d;margin:0px;border:none;background:none;font-size:16px;"id="emailButton">📧 Contact Me</button>
+      <p style="margin: 0%;font-size:3px;color: #696969;">@2023TingYo Liu</p>
+    </div>
+   </footer>
+</div>
+
+
+<script>
+      var currentSlide = 0;
+      var intervalId = setInterval(nextSlide, 5000);
+  
+      function nextSlide() {
+          currentSlide++;
+          if (currentSlide >= 3) {
+              currentSlide = 0;
+          }
+          document.getElementById('control-' + (currentSlide + 1)).click();
+      }
+    const slideLeft = document.querySelector('.slide-left');
+    const slideLeft2 = document.querySelector('.slide-left2');
+    const slideLeft3 = document.querySelector('.slide-left3');  
+    
+
+        function sendEmail() {
+  const to = "love889998@gmail.com";
+  const subject = "";
+  const body = "";
+  const mailtoUrl = "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  window.open(mailtoUrl);
+}
+const emailButton = document.getElementById("emailButton");
+emailButton.addEventListener("click", sendEmail);
+
+</script>
+</body>
+
+</html>
