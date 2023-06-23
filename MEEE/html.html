@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="emailButton">聯繫我們</button>
+    <script>
+        function sendEmail() {
+  const to = "timmy10191998@gmail.com";
+  const subject = "主旨";
+  const body = "內容";
+  const mailtoUrl = "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  window.open(mailtoUrl);
+}
+const emailButton = document.getElementById("emailButton");
+emailButton.addEventListener("click", sendEmail);
+
+    </script>
+</body>
+</html>
