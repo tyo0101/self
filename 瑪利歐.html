@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+.container {
+      align-items: center;
+      justify-content: center;
+margin-top:50px;
+      /* background-color: aqua; */
+}
+main{
+  height:100%;
+  flex: 1;
+  flex-direction: column; /* Add this line to make it a column layout */
+  /* background-color: #b77933; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+footer{
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 80px;
+ background-color: #e8e8e8; 
+}
+h2{
+        height: 60px;
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: aqua; */
+      }
+       h2 a{
+      font-family: 'Courier New', Courier, monospace;
+      text-decoration: none;
+      color:#323232;
+      /* background-color: aqua; */
+       }
+       h1{
+        color:#ff9d2d;
+        display: flex;
+        align-items: center;
+    justify-content:center;
+    margin:0px auto auto auto;
+    
+       }
+.頁首{
+    /* background-color: #ff9d2d; */
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+            
+}
+.頁首 img{
+    width: 880px;
+    height:100%;
+    object-fit:cover;
+
+}
+     
+@media only screen and (max-width: 768px) {
+            .頁首 {
+                height: 320px; /* Restore the original height for larger screens */
+            }
+            .container {
+                flex-direction: column;
+            }
+            footer{
+                font-size:5px;
+                
+            }
+        }
+    </style>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0">
+<title>TYO</title>
+<body>
+<div class="container">
+  <main>
+
+    <h2>
+        <a href="index.html">＜back</a>
+    </h2>
+      <h1>Ｑuestion box¿¿</h1>
+      <p style="color: #696969;">療癒ㄉㄨㄞ ㄉㄨㄞ小動畫</p>
+</div>
+    <div class="頁首">
+        <img src="瑪利歐/瑪利歐OK.gif">
+    </div>
+    
+
+  </main>
+    <footer>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <button style="color: #4d4d4d;margin:0px;border:none;background:none;font-size:16px;"id="emailButton">📧 Contact Me</button>
+          <p style="margin: 0%;font-size:3px;color: #696969;">@2023TingYo Liu</p>
+        </div>
+    </footer>
+
+</body>
+</html>
