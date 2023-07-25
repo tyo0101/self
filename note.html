@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+.container {
+      align-items: center;
+      justify-content: center;
+margin-top:50px;
+display: flex;
+      /* background-color: aqua; */
+}
+main{
+  height:100%;
+  width:100%;
+  flex: 1;
+  flex-direction: column; /* Add this line to make it a column layout */
+  /* background-color: #b77933; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+footer{
+            display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ width: 100%;
+ height: 80px;
+ background-color: #f5f5f5; 
+ flex-shrink: 0; 
+ margin: 0px;
+    
+}
+footer p{
+    font-size:14px;
+    font-family: 'Roboto', sans-serif;
+    color: #696969;
+    margin: 0px;
+}
+footer button {
+  color: #4d4d4d;
+  margin: 0;
+  border: none;
+  background: none;
+  font-size: 16px;
+}
+      h2{
+        height: 60px;
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+      }
+       h2 a{
+      font-family: 'Courier New', Courier, monospace;
+      text-decoration: none;
+      color:#323232;
+       }
+       h1{
+        color:#ff9d2d;
+        display: flex;
+        align-items: center;
+    justify-content:center;
+    margin:0px auto auto auto;
+       }
+.頁首{
+    /* background-color: #ff9d2d; */
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+            
+}
+.頁首 video{
+    width: 880px;
+    height:100%;
+    object-fit:cover;
+
+}
+.img1{
+    /* height:300px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:5px;
+    /* background-color: #696969; */
+}
+.雪人{
+    width: 365px;
+    height: 300px;
+    /* background-color: #ff9d2d; */
+    overflow: hidden; 
+    
+}
+.雪人 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0px 0;
+    /* background-color: aqua; */
+}
+.房子{
+    width: 500px;
+    height: 300px;
+    overflow: hidden; 
+    margin:0px 0px 0px 15px;
+}
+.房子 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: -30px 0;
+    margin:0px 15px 0px 0px;
+}
+.img2{
+    /* height:300px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #696969; */
+    margin:5px;
+}
+.街景{
+    width: 880px;
+    height: 300px;
+    /* background-color: #ff9d2d; */
+    overflow: hidden; 
+}
+.街景 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* object-position: -30px 0; */
+}
+@media only screen and (max-width: 768px) {
+            .頁首 {
+                height: 55vw; /* Restore the original height for larger screens */
+            }
+            .container {
+                flex-direction: column;
+            }
+
+            .img1, .img2 {
+                flex-direction: column;
+            }
+
+            .雪人, .房子 {
+                width: 100%;
+                height:50%;
+                margin:0px;
+            }
+            .街景 {
+                width: 100%;
+                height:100%;
+            }
+            .雪人 img, .房子 img, .街景 img {
+                height: 100%;
+                width: 100%;
+                object-position:0;
+            }
+            .footer{
+                font-size:10px;
+                margin:0;
+            }
+        }
+    </style>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0">
+<title>TYO</title>
+<body>
+    <div class="container">
+        <main>
+         <h2>
+             <a href="index.html">＜back</a>
+         </h2>
+           <h1>Note</h1>
+           <p style="color: #696969;">一個幻想自己是雪人的思覺失調症男孩</p>
+         </div>
+         <div class="頁首">
+             <video src="movie/NOTE.mp4" controls></video>
+         </div>
+         <div class="img1">
+         <div class="雪人">
+             <img src="note/雪人.png">
+             </div>
+             <div class="房子">
+             <img src="note/n1.jpg">
+             </div>
+         </div>
+         <div class="img2">
+             <div class="街景">
+                 <img src="note/n2.jpg">
+             </div>
+         </div>
+      </main>
+      <footer>
+        <button id="emailButton">📧 Contact Me</button>
+        <p>@2023TingYo Liu</p>
+  </footer>
+     
+</body>
+</html>
