@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+.container {
+      align-items: center;
+      justify-content: center;
+margin-top:50px;
+      /* background-color: aqua; */
+}
+main{
+  height:100%;
+  flex: 1;
+  flex-direction: column; /* Add this line to make it a column layout */
+  /* background-color: #b77933; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+footer{
+            display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ width: 100%;
+ height: 80px;
+ background-color: #f5f5f5; 
+ flex-shrink: 0; 
+ margin: 0px;
+    
+}
+footer p{
+    font-size:13px;
+    font-family: 'Roboto', sans-serif;
+    color: #696969;
+    margin: 0px;
+}
+footer button {
+  color: #4d4d4d;
+  margin: 0;
+  border: none;
+  background: none;
+  font-size: 16px;
+}
+      h2{
+        height: 60px;
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+  align-items: center;
+  justify-content: flex-start;
+      }
+       h2 a{
+      font-family: 'Courier New', Courier, monospace;
+      text-decoration: none;
+      color:#323232;
+       }
+       h1{
+        color:#ff9d2d;
+        display: flex;
+        align-items: center;
+    justify-content:center;
+    margin:0px auto auto auto;
+       }
+.頁首{
+    /* background-color: #ff9d2d; */
+    /* height: 520px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+            
+}
+.頁首 img{
+    width: 880px;
+    height:100%;
+    object-fit:cover;
+
+}
+div.cool{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height:80%; */
+            /* background-color: #ff9d2d; */
+          }
+          ul.slides{
+            position: relative;
+            width: 50vw;
+            height:35vw;
+            list-style:none;
+            margin: 0px;
+            padding:0px;
+            /* background-color: cornflowerblue; */
+            overflow: hidden;
+          }
+          li.slide{
+            margin: 0px;
+            padding:0px;
+            width:inherit;
+            height: inherit;
+            position: absolute;
+            top:0px;
+            left:0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+            transition: .2s transform ease-in-out;
+          }
+          li.slide img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+}
+          .slide:nth-of-type(1){
+            /* background-color: rgb(246, 246, 246); */
+
+          }
+          .slide:nth-of-type(2){
+            /* background-color: rgb(246, 246, 246); */
+            left:100%;
+          }
+          .slide:nth-of-type(3){
+            /* background-color: rgb(246, 246, 246); */
+            left:200%;
+          }
+          input[type="radio"]{
+position: relative;
+z-title:100;
+display:none;
+          }
+          .control-visable{
+           position: absolute;
+           width:100%;
+           bottom:12px;
+           text-align: center;
+          }
+          .control-visable label{
+           display:inline-block;
+           width:10px;
+           height:10px;
+           background-color: rgb(106, 106, 106);
+           margin: 0 3px;
+           border-radius:50%;
+           border:2px solid#7c7c7c;
+          }
+          input[type="radio"]:nth-of-type(1):checked~
+          .control-visable label:nth-of-type(1){
+            background-color: rgb(255, 255, 255);
+          }
+          input[type="radio"]:nth-of-type(2):checked~
+          .control-visable label:nth-of-type(2){
+            background-color: rgb(255, 255, 255);
+          }
+          input[type="radio"]:nth-of-type(3):checked~
+          .control-visable label:nth-of-type(3){
+            background-color: rgb(255, 255, 255);
+          }
+          input[type="radio"]:nth-of-type(1):checked~.slide{
+            transform: translateX(0%);
+          }
+          input[type="radio"]:nth-of-type(2):checked~.slide{
+            transform: translateX(-100%);
+          }
+          input[type="radio"]:nth-of-type(3):checked~.slide{
+            transform: translateX(-200%);
+          }
+          @media screen and (max-width: 768px) {
+            .container {
+              flex-direction: column;
+            }
+            .頁首 img {
+                width: 100%;
+                height: auto;
+            }
+            ul.slides{
+              height:70vw;
+              width:90vw;
+            }
+            .control-visable {
+                bottom: 8px;
+            }
+            footer{
+                font-size:15px;
+                margin:0;
+                
+            }
+        }
+    </style>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0">
+<title>TYO</title>
+<body>
+
+    <div class="container">
+<main>
+
+    <h2>
+        <a href="../index.html">＜back</a>
+
+      <h1>Greencap Boy</h1>
+      <p style="color: #696969;">若要生活過得去，頭上必須帶點綠<br>被戴綠帽的男孩依舊每天面帶微笑</p>
+
+    <div class="頁首">
+        <img src="../greenboy/greencap.gif">
+    </div>
+    <div class="cool">
+        <ul class="slides">
+            <input type="radio" id="control-1" name="control"checked>
+            <input type="radio" id="control-2" name="control">
+            <input type="radio" id="control-3" name="control">
+    
+            <li class="slide"><img src="../greenboy/cap.png"></li>
+            <li class="slide"><img src="../greenboy/clothes.png"></li>
+            <li class="slide"><img src="../greenboy/pants.png"></li>
+    
+            <div class="control-visable">
+                <label for="control-1"></label>
+                <label for="control-2"></label>
+                <label for="control-3"></label>
+            </div>
+        </ul>
+    </div>
+    
+</main>
+<footer>
+  <button id="emailButton">📧 Contact Me</button>
+  <p>@2023TingYo Liu</p>
+</footer>
+</div>
+<script>
+    var currentSlide = 0;
+    var intervalId = setInterval(nextSlide, 5000);
+
+    function nextSlide() {
+        currentSlide++;
+        if (currentSlide >= 3) {
+            currentSlide = 0;
+        }
+        document.getElementById('control-' + (currentSlide + 1)).click();
+    }
+</script>
+</body>
+</html>
